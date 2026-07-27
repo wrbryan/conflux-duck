@@ -8,6 +8,7 @@ import pandas as pd
 import argparse
 from pathlib import Path
 import re
+import json
 
 
 def table_name_from_path(p: Path):
@@ -36,7 +37,7 @@ def main(data_dir, out_db, overwrite):
     # store schemas
     con.execute("CREATE OR REPLACE TABLE __table_schemas(table_name VARCHAR, columns JSON)")
     for s in schemas:
-        con.execute("INSERT INTO __table_schemas VALUES(?, ?)", [s["table"], str(s["columns"])])
+        con.execute("INSERT INTO __table_schemas VALUES(?, ?)", [s["table"], json.dumps(s["columns"])])
     con.close()
     print("Done.")
 
