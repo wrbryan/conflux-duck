@@ -1,0 +1,8 @@
+duckdb>=1.0
+pandas>=2.0
+jupyter
+python-dotenv
+# Optional plotting and export
+plotly
+gspread
+oauth2client

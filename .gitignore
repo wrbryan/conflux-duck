@@ -1,0 +1,14 @@
+# DuckDB files
+*.duckdb
+unified.duckdb
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# examples (keep sample DBs out of git)
+examples/*.duckdb
